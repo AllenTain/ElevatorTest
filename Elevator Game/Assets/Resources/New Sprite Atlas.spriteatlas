@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: New Sprite Atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: ff3798d522db4a74b834abc8ac84afb1, type: 3}
+    totalSpriteSurfaceArea: 3194080
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: a037e8103dffa824b9b13e34c31a30b6, type: 3}
+  - {fileID: 21300000, guid: fc51805144419e44b9cea1b8d3ff8607, type: 3}
+  - {fileID: 21300000, guid: 1a4141032ab4ae84b8faabca43e42313, type: 3}
+  - {fileID: 21300000, guid: 675b9ee3a17d1a643b169a3d8f414fdf, type: 3}
+  - {fileID: 5122558387406259531, guid: d49bb644e7009104a8fbc89d5e00ad8e, type: 3}
+  - {fileID: -8788996982217667947, guid: d49bb644e7009104a8fbc89d5e00ad8e, type: 3}
+  - {fileID: -2343693395358084441, guid: d49bb644e7009104a8fbc89d5e00ad8e, type: 3}
+  - {fileID: 5975091382146575971, guid: d49bb644e7009104a8fbc89d5e00ad8e, type: 3}
+  - {fileID: -6356646528471498976, guid: d49bb644e7009104a8fbc89d5e00ad8e, type: 3}
+  - {fileID: 6333367784244610059, guid: d49bb644e7009104a8fbc89d5e00ad8e, type: 3}
+  - {fileID: 21300000, guid: d9fc1e55052e367428bd493d69ccb5bf, type: 3}
+  - {fileID: 21300000, guid: cafb5db69f2347f46a2fa83e3cb26cdb, type: 3}
+  - {fileID: 21300000, guid: 05444447826cc2448b883d2b28b3013b, type: 3}
+  - {fileID: 21300000, guid: 391c3998d4080f54ebe7f63aad91e71d, type: 3}
+  - {fileID: 21300000, guid: 3c1f01590ce7e134b87c3016a44cbd02, type: 3}
+  - {fileID: 21300000, guid: 6a3ed46913b96d1449ad4771df42483a, type: 3}
+  - {fileID: 21300000, guid: b3bfe9e99a18d934e856ec9263bd7db9, type: 3}
+  - {fileID: 21300000, guid: 549d385a23fab544f8820f586087d8d1, type: 3}
+  - {fileID: 21300000, guid: 4e4d258b2eec60347952d57cea24c561, type: 3}
+  - {fileID: 21300000, guid: 9b2260bb1d3c3ca4a89343907daae1f0, type: 3}
+  - {fileID: 21300000, guid: 8e05a31d32608574d94a0667e83f79d1, type: 3}
+  - {fileID: 21300000, guid: a52effee81109d14d979cde7035eb50a, type: 3}
+  - {fileID: 21300000, guid: ea75c13f67d04c44c8158d923c75cd6e, type: 3}
+  - {fileID: 21300000, guid: 9226e3cf1e7b7d142a43591bd53d4dcf, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Background
+  - GreenLights
+  - DustCloudMapSingle2
+  - RedLights
+  - Runner_4
+  - Runner_5
+  - Runner_0
+  - Runner_1
+  - Runner_2
+  - Runner_3
+  - DustCloudMapSingle1
+  - DustCloudMapSingle7
+  - Door4
+  - Door5
+  - Door3
+  - DoorMask
+  - Door6
+  - Door2
+  - DustCloudMapSingle5
+  - DustCloudMapSingle3
+  - DustCloudMapSingle6
+  - bridge
+  - DustCloudMapSingle4
+  - Door1
+  m_Tag: New Sprite Atlas
+  m_IsVariant: 0
