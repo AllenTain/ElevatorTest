@@ -20,8 +20,9 @@ public class GameManager : MonoBehaviour
     public bool StopLight;
     public bool TapNow;
     public bool changingLevels;
+    public bool gameOver = false;
 
-    public TextMeshProUGUI HealthText;
+    public TextMeshProUGUI HealthText, LevelText, GameOverText;
 
     public GameObject NextLevelPrefab, RunnerPrefab;
 
@@ -29,9 +30,13 @@ public class GameManager : MonoBehaviour
     public int numberOfElevatorsPerLevel = 5;
     public float elevatorHeight;
     public int pixelsPerUnit = 100;
-    void Start()
+
+    private void Awake()
     {
         Application.targetFrameRate = 70;
+    }
+    void Start()
+    {
         elevatorHeight = (Screen.height / numberOfElevatorsPerLevel)/ numberOfElevatorsPerLevel;
         currentSide = CurrentSide.right;
         ResetToLevelOne();
@@ -40,18 +45,32 @@ public class GameManager : MonoBehaviour
         ChangeText(playerHealth);
     }
 
+    //void OnGUI()//Debugging Window
+    //{
+    //        GUI.Box(new Rect(0, Screen.height - 80, 250, 80), GUIContent.none);
+    //        GUI.Label(new Rect(0, Screen.height - 50, 250, 20), "fps: " + 1.0f / Time.deltaTime);
+    //}
+
     // Update is called once per frame
     void Update()
     {
         if (Input.GetAxisRaw("Fire1") != 0 && !changingLevels)
         {
-            Debug.Log("Pressed Mouse Button");
-            if (awaitingTap)
+            if (gameOver)
             {
-                awaitingTap = false;
-                StopLight = true;
-                StartCoroutine(OpenElevators());
+                ResetToLevelOne();
             }
+            else
+            {
+                Debug.Log("Pressed Mouse Button");
+                if (awaitingTap)
+                {
+                    awaitingTap = false;
+                    StopLight = true;
+                    StartCoroutine(OpenElevators());
+                }
+            }
+            
         }
         if (bridgeIndex == Mathf.Abs(greenLightIndex))
             TapNow = true;
@@ -62,6 +81,7 @@ public class GameManager : MonoBehaviour
     void ChangeText(int health)
     {
         HealthText.text = "Health: " + health;
+        LevelText.text = "Level: " + currentLevel;
     }
 
     IEnumerator OpenElevators()
@@ -169,6 +189,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(changeGreenLightIndex_Co());
         ChangeSides();
         yield return StartCoroutine(ShiftDownLevels());
+        ChangeText(playerHealth);
     }
 
     void ChangeSides()
@@ -196,6 +217,8 @@ public class GameManager : MonoBehaviour
         ChangeSides();
         playerHealth -= 10;
         ChangeText(playerHealth);
+        if (playerHealth <= 0)
+            GameOver();
     }
 
     IEnumerator DropOnTopBridge(GameObject runner)
@@ -215,6 +238,9 @@ public class GameManager : MonoBehaviour
         ChangeSides();
         playerHealth -= 10;
         ChangeText(playerHealth);
+
+        if (playerHealth <= 0)
+            GameOver();
     }
 
     void SpeedUpLight()
@@ -231,14 +257,22 @@ public class GameManager : MonoBehaviour
     void GameOver()
     {
         //reset all variables
-        ResetToLevelOne();
+        gameOver = true;
+        HealthText.gameObject.SetActive(false);
+        LevelText.gameObject.SetActive(false);
+        GameOverText.gameObject.SetActive(true);
     }
 
     void ResetToLevelOne(){
+        gameOver = false;
+        HealthText.gameObject.SetActive(true);
+        LevelText.gameObject.SetActive(true);
+        GameOverText.gameObject.SetActive(false);
         currentLevel = 1;
         greenLightIndex = 1;
-        //elevatorLightSpeed = 2f;
+        elevatorLightSpeed = 0.5f;
         playerHealth = 50;
+        ChangeText(playerHealth);
     }
 
     IEnumerator changeGreenLightIndex_Co()
